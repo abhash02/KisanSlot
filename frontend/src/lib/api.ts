@@ -1,6 +1,6 @@
 import type { ApiErrorResponse } from '../types/auth'
 
-const API_BASE_URL = '/api/v1'
+const API_BASE_URL = (import.meta.env.VITE_API_BASE_URL || '/api/v1').replace(/\/+$/, '')
 const TOKEN_KEY = 'kisanslot_token'
 
 export function getStoredToken(): string | null {
